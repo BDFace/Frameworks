@@ -1,0 +1,7 @@
+{
+  "name": "FRAMEWORKS - Pen Plotter Data Art",
+  "description": "Vertical gallery and studio shop for algorithmic pen plotter data art, featuring curated generative works, studio process, and seamless checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
