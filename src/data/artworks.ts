@@ -53,15 +53,17 @@ export const ARTWORKS: Artwork[] = [
     plotTime: '05h 14m',
     plotSpeed: '18mm/sec vector traversal',
     year: 2024,
-    description: 'An expansive generative landscape derived from continuous Perlin heightmaps and fluid pressure simulations. Over 28,000 distinct isolines produce a kinetic resonance that mimics shifting oceanic currents and glacial ridges.',
-    story: 'Algorithm Alpha renders the fluid physics of elevation contours without any overlapping collisions. Plotted continuously over five hours with a calibrated 0.1mm needle nib, capturing the organic density of geological strata.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDXKXi3fvYXDQ-prKNtVqWuKPSmcoad9okadGusw-hKMN9X9EJUDbar_MppwXuA0z4oYS08shSsTkKUUUwh0oyvK8_pW1wGU0NxzpGTqAyP6gQL6fAEsWogDhPLqYkLxrhcWrSZDjkyiTsgcuSBzWRvBSQwHPEs8-bGpLuhSnHLAokFABO437MCQMx--slPIoZ7K9Bhsm_Ttulba-YvqFgtxMKYUKXLP7k7Cd7gqg1N223EOTaNKYNt',
+    description: 'An intricate generative landscape where millions of delicate vector grass contours converge, framing the emerging portrait of a hound peering through tall archival meadow strokes.',
+    story: 'Algorithm Alpha renders the fluid physics of elevation contours and organic foliage without any overlapping collisions. Plotted continuously over five hours with a calibrated 0.1mm needle nib, capturing both mathematical density and gentle natural portraiture.',
+    image: '/Dog1.1.svg',
+    objectPosition: 'object-[50%_88%]',
+    imageScale: 'scale-[1.15]',
     category: 'topography',
     additionalImages: [
       {
-        url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDXKXi3fvYXDQ-prKNtVqWuKPSmcoad9okadGusw-hKMN9X9EJUDbar_MppwXuA0z4oYS08shSsTkKUUUwh0oyvK8_pW1wGU0NxzpGTqAyP6gQL6fAEsWogDhPLqYkLxrhcWrSZDjkyiTsgcuSBzWRvBSQwHPEs8-bGpLuhSnHLAokFABO437MCQMx--slPIoZ7K9Bhsm_Ttulba-YvqFgtxMKYUKXLP7k7Cd7gqg1N223EOTaNKYNt',
-        caption: 'Framed gallery presentation in minimal black aluminum frame',
-        alt: 'Algorithm Alpha framed exhibition piece'
+        url: '/Dog1.1.svg',
+        caption: 'Framed gallery presentation centered on the portrait',
+        alt: 'Algorithm Alpha canine in meadow pen plotter piece'
       },
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNMoupTpvlktCSWHukA12kTry28-AjU7C3GwLPDoYq-t_-YZrWs3DH6g-9hzaQFazYszYUveV_B0CW2LW_L38wkdZfEgaMQfma5p4Mn1kHonkEFhp0O6AtMsxR0BRqifeyggKFA1Olwt0gRU0P3um9ZSENQQ3JFRKNqjsVR33wzVsgPDRNuNY_-ktujAV8pPGtEOmkbkZZpuHhuEGj6r2dr4WhDdkx7M_E3Wja2LNR8CDv8dqpz1Q8',

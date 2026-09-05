@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 950" width="100%" height="100%">
+  <defs>
+    <!-- Paper Texture & Tonal Filter -->
+    <filter id="paper-texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.94  0 0 0 0 0.93  0 0 0 0 0.91  0 0 0 0.08 0" />
+      <feBlend mode="multiply" in="SourceGraphic" />
+    </filter>
+    
+    <style>
+      .grass-bg { stroke: #5a6358; stroke-width: 1.2; stroke-linecap: round; opacity: 0.85; fill: none; }
+      .grass-mid { stroke: #7b8577; stroke-width: 1.0; stroke-linecap: round; opacity: 0.9; fill: none; }
+      .grass-fore { stroke: #414a3e; stroke-width: 1.4; stroke-linecap: round; fill: none; }
+      .grass-light { stroke: #adb7a8; stroke-width: 0.9; stroke-linecap: round; opacity: 0.8; fill: none; }
+      .dog-fur-base { fill: #f3f3f0; stroke: #2a2c28; stroke-width: 1.2; }
+      .dog-stroke { stroke: #1e201d; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .dog-shade { stroke: #454942; stroke-width: 1.0; stroke-linecap: round; fill: none; }
+      .dog-accent { fill: #1a1a1a; }
+    </style>
+  </defs>
+
+  <!-- Archival Canvas Background (Warm 300gsm Cotton Paper Tone) -->
+  <rect width="100%" height="100%" fill="#dedecc" />
+  <rect width="100%" height="100%" fill="#787e74" opacity="0.35" />
+
+  <!-- Dense Pen Plotted Grass Layer (Top to Bottom Field) -->
+  <g id="plotted-grass-field">
+    <!-- Algorithmic Grass Cross-Hatching Vectors -->
+    <!-- Quadrant 1: Top Dense Strokes -->
+    <path class="grass-bg" d="
+      M30,40 L65,120 M80,20 L110,130 M140,50 L125,140 M190,30 L220,135 M250,45 L240,150 
+      M290,25 L330,140 M360,50 L345,155 M410,35 L430,130 M470,20 L450,145 M520,40 L550,150 
+      M580,25 L570,135 M630,45 L660,160 M50,130 L90,220 M120,110 L100,240 M160,140 L195,230 
+      M210,125 L200,250 M270,135 L300,245 M320,120 L315,255 M380,140 L410,230 M440,115 L435,245 
+      M490,135 L525,240 M550,120 L540,250 M600,140 L630,235 M660,110 L645,245
+    " />
+    <path class="grass-mid" d="
+      M45,60 Q70,110 50,160 M105,40 Q130,95 115,170 M165,70 Q145,120 180,185 M225,50 Q250,105 230,175 
+      M285,65 Q270,125 310,190 M345,45 Q375,110 355,180 M405,70 Q390,130 430,195 M465,55 Q495,115 475,185 
+      M525,65 Q510,125 550,190 M585,45 Q615,110 595,180 M645,70 Q630,130 670,195
+    " />
+    <path class="grass-fore" d="
+      M20,90 Q60,160 35,240 M85,80 Q120,150 95,235 M150,100 Q130,175 170,250 M215,85 Q255,160 230,245 
+      M275,105 Q255,180 295,260 M335,80 Q375,155 350,245 M395,100 Q375,180 415,260 M455,85 Q495,160 470,245 
+      M515,105 Q495,180 535,260 M575,80 Q615,155 590,245 M635,100 Q615,180 655,260
+    " />
+    <path class="grass-light" d="
+      M40,110 L80,190 M95,95 L135,180 M160,120 L140,210 M220,100 L250,195 M280,115 L260,210 
+      M340,95 L370,190 M400,120 L380,210 M460,100 L490,195 M520,115 L500,210 M580,95 L610,190 
+      M640,120 L620,210
+    " />
+
+    <!-- Mid-Field Density (Y: 250 - 550) -->
+    <path class="grass-bg" d="
+      M30,260 L75,370 M90,240 L120,380 M150,270 L135,390 M200,250 L235,385 M260,265 L250,400 
+      M300,245 L345,390 M370,270 L355,405 M420,255 L445,380 M480,240 L460,395 M530,260 L565,400 
+      M590,245 L580,385 M640,265 L675,410 M60,380 L105,490 M130,360 L110,510 M170,390 L210,500 
+      M220,375 L210,520 M280,385 L315,515 M330,370 L325,525 M390,390 L425,500 M450,365 L445,515 
+      M500,385 L540,510 M560,370 L550,520 M610,390 L645,505 M670,360 L655,515
+    " />
+    <path class="grass-mid" d="
+      M55,290 Q85,360 60,430 M115,270 Q145,345 125,440 M175,300 Q155,370 195,455 M235,280 Q265,355 240,445 
+      M295,295 Q280,375 325,460 M355,275 Q390,360 365,450 M415,300 Q400,380 445,465 M475,285 Q510,365 485,455 
+      M535,295 Q520,375 565,460 M595,275 Q630,360 605,450 M655,300 Q640,380 685,465
+    " />
+    <path class="grass-fore" d="
+      M35,340 Q75,430 45,530 M95,320 Q140,410 110,525 M165,350 Q145,445 190,540 M230,325 Q275,420 245,535 
+      M290,355 Q270,450 315,550 M350,320 Q395,415 365,535 M410,350 Q390,450 435,550 M470,325 Q515,420 485,535 
+      M530,355 Q510,450 555,550 M590,320 Q635,415 605,535 M650,350 Q630,450 675,550
+    " />
+    <path class="grass-light" d="
+      M50,370 L95,470 M105,345 L150,450 M175,390 L150,500 M240,360 L275,475 M300,385 L275,500 
+      M360,355 L395,470 M420,390 L395,500 M480,360 L515,475 M540,385 L515,500 M600,355 L635,470
+    " />
+
+    <!-- Lower Field Density surrounding the Dog (Y: 500 - 750) -->
+    <path class="grass-bg" d="
+      M40,540 L85,670 M100,520 L130,680 M160,550 L145,690 M210,530 L245,685 M270,545 L260,700 
+      M310,525 L355,690 M380,550 L365,705 M430,535 L455,680 M490,520 L470,695 M540,540 L575,700 
+      M600,525 L590,685 M650,545 L685,710 M70,660 L115,790 M140,640 L120,810 M180,670 L220,800 
+      M510,665 L550,810 M570,650 L560,820 M620,670 L655,805 M680,640 L665,815
+    " />
+    <path class="grass-mid" d="
+      M65,570 Q95,660 70,750 M125,550 Q155,645 135,760 M185,580 Q165,670 205,775 M245,560 Q275,655 250,765 
+      M485,565 Q520,665 495,775 M545,575 Q530,675 575,780 M605,555 Q640,660 615,770 M665,580 Q650,680 695,785
+    " />
+    <path class="grass-fore" d="
+      M45,620 Q85,730 55,840 M105,600 Q150,710 120,845 M175,630 Q155,745 200,860 M240,605 Q285,720 255,855 
+      M480,605 Q525,720 495,855 M540,635 Q520,750 565,870 M600,600 Q645,715 615,855 M660,630 Q640,750 685,870
+    " />
+  </g>
+
+  <!-- THE DOG (Emerging playfully from the bottom field, centered around X: 350, Y: 720 to 950) -->
+  <g id="dog-subject">
+    <!-- Dog Fur Base Silhouette -->
+    <path class="dog-fur-base" d="
+      M 160,950 
+      C 165,900 175,850 190,820 
+      C 205,790 220,775 235,760 
+      C 220,720 215,670 230,625 
+      C 245,580 280,560 310,580 
+      C 325,590 335,610 340,635 
+      C 345,625 355,625 360,635 
+      C 365,610 375,590 390,580 
+      C 420,560 455,580 470,625 
+      C 485,670 480,720 465,760 
+      C 480,775 495,790 510,820 
+      C 525,850 535,900 540,950 
+      Z
+    " />
+
+    <!-- Outer Fur Texture & Ear Contours (Generative Plotter Hatching) -->
+    <!-- Left Ear Lines -->
+    <g class="dog-stroke">
+      <!-- Left Ear Arch -->
+      <path d="M235,760 C220,710 215,660 232,620 C245,585 275,568 305,585 C320,595 330,615 335,640" />
+      <path d="M245,745 C235,705 230,665 242,630 C252,600 275,585 298,600 C310,610 318,625 322,650" />
+      <path d="M258,730 C248,695 245,665 255,640 C265,615 280,605 295,618" />
+      <!-- Left Ear Inner Shading (Pen Hatches) -->
+      <path class="dog-shade" d="
+        M240,640 L260,670 M245,655 L265,685 M250,670 L270,700 M255,685 L275,715 
+        M260,700 L280,730 M265,715 L285,745 M270,730 L290,755
+      " />
+    </g>
+
+    <!-- Right Ear Lines -->
+    <g class="dog-stroke">
+      <!-- Right Ear Arch -->
+      <path d="M465,760 C480,710 485,660 468,620 C455,585 425,568 395,585 C380,595 370,615 365,640" />
+      <path d="M455,745 C465,705 470,665 458,630 C448,600 425,585 402,600 C390,610 382,625 378,650" />
+      <path d="M442,730 C452,695 455,665 445,640 C435,615 420,605 405,618" />
+      <!-- Right Ear Inner Shading (Pen Hatches) -->
+      <path class="dog-shade" d="
+        M460,640 L440,670 M455,655 L435,685 M450,670 L430,700 M445,685 L425,715 
+        M440,700 L420,730 M435,715 L415,745 M430,730 L410,755
+      " />
+    </g>
+
+    <!-- Dog Forehead & Brow Structure -->
+    <g class="dog-stroke">
+      <path d="M335,640 C340,630 360,630 365,640" />
+      <!-- Center Forehead Strata Lines -->
+      <path d="M350,635 L350,710" />
+      <path d="M343,645 C343,670 345,695 345,715" />
+      <path d="M357,645 C357,670 355,695 355,715" />
+      <path d="M335,655 C337,680 340,705 340,725" />
+      <path d="M365,655 C363,680 360,705 360,725" />
+      <path d="M328,670 C332,695 335,720 335,740" />
+      <path d="M372,670 C368,695 365,720 365,740" />
+    </g>
+
+    <!-- Dog Eyes (Plotted with high contrast & soulful expression) -->
+    <!-- Left Eye -->
+    <g id="dog-left-eye">
+      <ellipse cx="295" cy="710" rx="14" ry="11" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6" transform="rotate(-6, 295, 710)" />
+      <ellipse cx="296" cy="710" rx="9" ry="8" class="dog-accent" />
+      <circle cx="293" cy="707" r="3" fill="#ffffff" />
+      <!-- Brow & Under-eye Hatches -->
+      <path class="dog-stroke" d="M280,695 C290,690 305,692 312,698" />
+      <path class="dog-stroke" d="M282,725 C292,728 304,726 310,722" />
+      <path class="dog-shade" d="M276,698 L285,692 M286,692 L295,688 M298,688 L308,691 M309,692 L317,698" />
+    </g>
+
+    <!-- Right Eye -->
+    <g id="dog-right-eye">
+      <ellipse cx="405" cy="710" rx="14" ry="11" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6" transform="rotate(6, 405, 710)" />
+      <ellipse cx="404" cy="710" rx="9" ry="8" class="dog-accent" />
+      <circle cx="407" cy="707" r="3" fill="#ffffff" />
+      <!-- Brow & Under-eye Hatches -->
+      <path class="dog-stroke" d="M420,695 C410,690 395,692 388,698" />
+      <path class="dog-stroke" d="M418,725 C408,728 396,726 390,722" />
+      <path class="dog-shade" d="M424,698 L415,692 M414,692 L405,688 M402,688 L392,691 M391,692 L383,698" />
+    </g>
+
+    <!-- Snout & Nose Bridge Vectors -->
+    <g class="dog-stroke">
+      <!-- Nose Bridge Contours -->
+      <path d="M335,735 C335,765 330,795 325,820" />
+      <path d="M365,735 C365,765 370,795 375,820" />
+      <path d="M342,740 C342,770 340,798 338,825" />
+      <path d="M358,740 C358,770 360,798 362,825" />
+      <path d="M350,735 L350,830" />
+      
+      <!-- Dog Nose (Solid Plotted Carbon Inking) -->
+      <path d="
+        M325,830 
+        C325,820 338,815 350,815 
+        C362,815 375,820 375,830 
+        C375,845 365,858 350,858 
+        C335,858 325,845 325,830 
+        Z
+      " fill="#1b1c19" stroke="#121310" stroke-width="2" />
+      <!-- Nose Nostrils & Highlight -->
+      <ellipse cx="338" cy="838" rx="4" ry="3" fill="#383b34" />
+      <ellipse cx="362" cy="838" rx="4" ry="3" fill="#383b34" />
+      <path d="M342,822 C346,820 354,820 358,822" stroke="#ffffff" stroke-width="1.2" opacity="0.6" />
+
+      <!-- Philtrum & Mouth -->
+      <path d="M350,858 L350,875" stroke-width="1.8" />
+      <path d="M350,875 C335,875 320,870 305,860" stroke-width="1.6" />
+      <path d="M350,875 C365,875 380,870 395,860" stroke-width="1.6" />
+      <!-- Chin / Muzzle Contour -->
+      <path d="M330,885 C342,895 358,895 370,885" stroke-width="1.3" />
+
+      <!-- Whiskers & Whisker Dots -->
+      <circle cx="318" cy="855" r="1.5" class="dog-accent" />
+      <circle cx="310" cy="862" r="1.5" class="dog-accent" />
+      <circle cx="322" cy="868" r="1.5" class="dog-accent" />
+      <circle cx="382" cy="855" r="1.5" class="dog-accent" />
+      <circle cx="390" cy="862" r="1.5" class="dog-accent" />
+      <circle cx="378" cy="868" r="1.5" class="dog-accent" />
+
+      <!-- Fine Whiskers (Arc Traversal) -->
+      <path d="M305,858 C265,852 230,865 200,880" stroke-width="0.9" opacity="0.7" />
+      <path d="M302,866 C260,868 225,885 195,905" stroke-width="0.9" opacity="0.7" />
+      <path d="M308,874 C270,882 235,905 210,930" stroke-width="0.9" opacity="0.7" />
+      <path d="M395,858 C435,852 470,865 500,880" stroke-width="0.9" opacity="0.7" />
+      <path d="M398,866 C440,868 475,885 505,905" stroke-width="0.9" opacity="0.7" />
+      <path d="M392,874 C430,882 465,905 490,930" stroke-width="0.9" opacity="0.7" />
+    </g>
+
+    <!-- Muzzle Fur Cross-Hatching -->
+    <g class="dog-shade">
+      <path d="
+        M320,800 L325,815 M328,795 L333,812 M336,792 L340,810 
+        M380,800 L375,815 M372,795 L367,812 M364,792 L360,810
+      " />
+      <path d="
+        M325,860 L335,870 M330,865 L340,875 M375,860 L365,870 M370,865 L360,875
+      " />
+    </g>
+
+    <!-- Chest & Neck Fur Contours -->
+    <g class="dog-stroke">
+      <path d="M270,880 C265,905 260,930 255,950" />
+      <path d="M295,895 C290,915 285,935 280,950" />
+      <path d="M320,910 C318,925 315,940 310,950" />
+      <path d="M350,915 L350,950" />
+      <path d="M380,910 C382,925 385,940 390,950" />
+      <path d="M405,895 C410,915 415,935 420,950" />
+      <path d="M430,880 C435,905 440,930 445,950" />
+    </g>
+  </g>
+
+  <!-- Foreground Grass Blades Overlapping the Dog (Creating Depth in the Meadow) -->
+  <g id="foreground-grass-over-dog">
+    <path class="grass-fore" stroke-width="2.0" d="
+      M170,950 C185,880 195,820 220,770 
+      M210,950 C220,890 235,840 255,800 
+      M260,950 C270,900 275,860 290,830 
+      M305,950 C310,910 315,880 320,855 
+      M380,950 C378,910 375,880 370,855 
+      M420,950 C415,900 410,860 395,830 
+      M465,950 C458,890 445,840 430,800 
+      M500,950 C490,880 480,820 460,770
+    " />
+    <path class="grass-mid" stroke-width="1.5" d="
+      M190,950 C205,890 215,845 235,810 
+      M240,950 C250,905 260,870 280,840 
+      M335,950 C338,920 340,900 342,880 
+      M365,950 C362,920 360,900 358,880 
+      M440,950 C435,905 425,870 410,840 
+      M480,950 C470,890 460,845 445,810
+    " />
+    <path class="grass-light" stroke-width="1.2" d="
+      M180,930 L215,860 M250,930 L275,875 M325,940 L335,900 
+      M375,940 L365,900 M430,930 L410,875 M490,930 L465,860
+    " />
+  </g>
+
+  <!-- Technical Plotter Metadata (Lower Margin) -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="9" fill="#2d302a" opacity="0.6">
+    <text x="30" y="935">+ AXIDRAW V3 // 0.1MM ARCHIVAL INK</text>
+    <text x="490" y="935">VECTOR TRAVERSAL: 48,210 PTS +</text>
+  </g>
+</svg>

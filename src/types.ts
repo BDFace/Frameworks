@@ -15,6 +15,8 @@ export interface Artwork {
   description: string;
   story: string;
   image: string;
+  objectPosition?: string;
+  imageScale?: string;
   category: 'geometric' | 'topography' | 'moire' | 'isometric';
   additionalImages: Array<{
     url: string;

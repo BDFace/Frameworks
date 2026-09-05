@@ -114,7 +114,11 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
                     src={allImages[activeImageIndex]?.url}
                     alt={allImages[activeImageIndex]?.alt || artwork.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-contain object-center transition-all duration-300"
+                    className={`w-full h-full ${
+                      activeImageIndex === 0 && artwork.objectPosition
+                        ? `object-cover ${artwork.objectPosition}`
+                        : 'object-contain object-center'
+                    } transition-all duration-300`}
                   />
 
                   {/* Caption badge */}
@@ -145,7 +149,9 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
                         src={img.url}
                         alt={img.alt}
                         referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover ${
+                          idx === 0 && artwork.objectPosition ? artwork.objectPosition : 'object-center'
+                        }`}
                       />
                     </button>
                   ))}

@@ -471,7 +471,7 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({ cart, onBack, onOrde
                         src={item.artwork.image}
                         alt={item.artwork.title}
                         referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover ${item.artwork.objectPosition || 'object-center'}`}
                       />
                       <span className="absolute top-0.5 right-0.5 bg-black text-white text-[9px] font-mono px-1">
                         ×{item.quantity}

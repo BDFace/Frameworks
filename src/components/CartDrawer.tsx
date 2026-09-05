@@ -83,7 +83,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         src={item.artwork.image}
                         alt={item.artwork.title}
                         referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover ${item.artwork.objectPosition || 'object-center'}`}
                       />
                     </div>
 

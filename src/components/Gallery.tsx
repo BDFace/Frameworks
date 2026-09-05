@@ -92,7 +92,9 @@ export const Gallery: React.FC<GalleryProps> = ({ artworks, onSelectArtwork, onA
                     src={art.image}
                     alt={art.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                      art.objectPosition || 'object-center'
+                    } ${art.imageScale || ''}`}
                   />
 
                   {/* Hover Overlay */}
