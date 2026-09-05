@@ -55,7 +55,7 @@ export const ARTWORKS: Artwork[] = [
     year: 2024,
     description: 'An intricate generative landscape where millions of delicate vector grass contours converge, framing the emerging portrait of a hound peering through tall archival meadow strokes.',
     story: 'Algorithm Alpha renders the fluid physics of elevation contours and organic foliage without any overlapping collisions. Plotted continuously over five hours with a calibrated 0.1mm needle nib, capturing both mathematical density and gentle natural portraiture.',
-    image: '/Dog1.1.svg',
+    image: '/Dog1.jpeg',
     objectPosition: 'object-[50%_88%]',
     imageScale: 'scale-[1.15]',
     category: 'topography',
