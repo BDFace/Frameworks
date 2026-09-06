@@ -488,8 +488,8 @@ export const CheckoutView: React.FC<CheckoutViewProps> = ({ cart, onBack, onOrde
                       <p className="text-[11px] text-zinc-600 font-sans mt-0.5">
                         Framing: <span className="font-medium">{
                           item.frameOption === 'unframed' ? 'Unframed Mat (£0)' :
-                          item.frameOption === 'black-gallery' ? 'Black Aluminum Frame (+£120)' :
-                          'English Natural Oak (+£140)'
+                          item.frameOption === 'black-gallery' ? 'Black Aluminum Frame (+£1200)' :
+                          'English Natural Oak (+£1400)'
                         }</span>
                       </p>
                     </div>

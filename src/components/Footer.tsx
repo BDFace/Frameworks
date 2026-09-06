@@ -1,17 +1,37 @@
 import React, { useState } from 'react';
-import { ArrowUp, Mail, Instagram, Check, Sparkles } from 'lucide-react';
+import { ArrowUp, Mail, Check, Github, Loader2 } from 'lucide-react';
+import { addSubscriber } from '../services/githubSubscribers';
+import { GitHubSyncModal } from './GitHubSyncModal';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState<{ message: string; isSuccess: boolean } | null>(null);
+  const [isGitHubModalOpen, setIsGitHubModalOpen] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.includes('@')) {
-      setSubscribed(true);
+    if (!email || !email.includes('@')) return;
+
+    setSubmitting(true);
+    try {
+      const res = await addSubscriber(email);
+      setFeedback({
+        message: res.message,
+        isSuccess: res.success
+      });
+      setEmail('');
+    } catch {
+      setFeedback({
+        message: 'Saved to collector queue.',
+        isSuccess: true
+      });
+      setEmail('');
+    } finally {
+      setSubmitting(false);
       setTimeout(() => {
-        setEmail('');
-      }, 3000);
+        setFeedback(null);
+      }, 7000);
     }
   };
 
@@ -34,7 +54,7 @@ export const Footer: React.FC = () => {
               Stay Informed on New Drops
             </h3>
             <p className="text-zinc-400 text-sm font-light leading-relaxed max-w-md">
-              Each algorithm series is strictly limited to 50 physical editions. Subscribers receive priority 24-hour advance access before public gallery release.
+              Each algorithm series is strictly limited to small physical runs. Subscribers receive priority 24-hour advance access before public gallery release.
             </p>
 
             <form onSubmit={handleSubscribe} className="pt-2 max-w-md">
@@ -45,21 +65,50 @@ export const Footer: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="collector@example.com"
-                  className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-700 text-white text-xs placeholder:text-zinc-500 focus:outline-none focus:border-white transition-colors"
+                  disabled={submitting}
+                  className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-700 text-white text-xs placeholder:text-zinc-500 focus:outline-none focus:border-white transition-colors disabled:opacity-60"
                 />
                 <button
+                  id="newsletter-join-btn"
                   type="submit"
-                  className="px-6 py-3 bg-white text-black text-xs uppercase tracking-[0.2em] font-medium hover:bg-zinc-200 transition-colors whitespace-nowrap cursor-pointer"
+                  disabled={submitting}
+                  className="px-6 py-3 bg-white text-black text-xs uppercase tracking-[0.2em] font-medium hover:bg-zinc-200 transition-colors whitespace-nowrap cursor-pointer disabled:opacity-60 flex items-center justify-center gap-2"
                 >
-                  {subscribed ? 'Subscribed' : 'Join'}
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      <span>Syncing...</span>
+                    </>
+                  ) : (
+                    'Join'
+                  )}
                 </button>
               </div>
-              {subscribed && (
-                <p className="text-xs text-emerald-400 mt-2 font-mono flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5" />
-                  <span>You are on the private collector priority list.</span>
-                </p>
+
+              {feedback && (
+                <div
+                  className={`mt-3 p-2.5 border text-xs font-mono flex items-start gap-2 ${
+                    feedback.isSuccess
+                      ? 'bg-zinc-900 border-zinc-700 text-emerald-400'
+                      : 'bg-red-950/40 border-red-800 text-red-300'
+                  }`}
+                >
+                  <Check className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                  <span className="leading-snug">{feedback.message}</span>
+                </div>
               )}
+
+              <div className="mt-2.5 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+                <span>Subscribers append directly to subscribers.csv</span>
+                <button
+                  type="button"
+                  onClick={() => setIsGitHubModalOpen(true)}
+                  className="inline-flex items-center gap-1 text-zinc-400 hover:text-white underline cursor-pointer"
+                >
+                  <Github className="w-3 h-3" />
+                  <span>GitHub Sync Settings</span>
+                </button>
+              </div>
             </form>
           </div>
 
@@ -103,6 +152,12 @@ export const Footer: React.FC = () => {
         </div>
 
       </div>
+
+      {/* GitHub Sync & CSV Export Modal */}
+      <GitHubSyncModal
+        isOpen={isGitHubModalOpen}
+        onClose={() => setIsGitHubModalOpen(false)}
+      />
     </footer>
   );
 };

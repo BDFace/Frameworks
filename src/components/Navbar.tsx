@@ -1,16 +1,12 @@
 import React from 'react';
-import { ShoppingBag, Compass, Info, Layers, X, Menu } from 'lucide-react';
-import { CartItem } from '../types';
+import { Compass, Info, Layers, X, Menu } from 'lucide-react';
 
 interface NavbarProps {
-  cart: CartItem[];
-  onOpenCart: () => void;
-  activeSection: string;
+  activeSection?: string;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ cart, onOpenCart }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const scrollTo = (id: string) => {
     setMobileMenuOpen(false);
@@ -52,8 +48,8 @@ export const Navbar: React.FC<NavbarProps> = ({ cart, onOpenCart }) => {
           </a>
         </div>
 
-        {/* Desktop Navigation Links */}
-        <nav id="desktop-nav" className="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium text-[#4A4A4A]">
+        {/* Desktop Navigation Links - positioned over to the right */}
+        <nav id="desktop-nav" className="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium text-[#4A4A4A] ml-auto">
           <button
             id="nav-link-gallery"
             onClick={() => scrollTo('gallery')}
@@ -77,33 +73,12 @@ export const Navbar: React.FC<NavbarProps> = ({ cart, onOpenCart }) => {
           </button>
         </nav>
 
-        {/* Action Controls */}
-        <div className="flex items-center space-x-4">
-          <button
-            id="nav-cart-btn"
-            onClick={onOpenCart}
-            className="group relative flex items-center space-x-2.5 px-4 py-2 border border-black hover:bg-black hover:text-white transition-all duration-200 text-xs uppercase tracking-[0.15em] font-medium cursor-pointer"
-            aria-label="View Cart"
-          >
-            <ShoppingBag className="w-4 h-4 transition-transform group-hover:scale-110" />
-            <span className="hidden sm:inline">Cart</span>
-            <span
-              id="cart-badge-count"
-              className={`inline-flex items-center justify-center min-w-[20px] h-[20px] px-1 text-[10px] font-bold rounded-full ${
-                totalCartCount > 0
-                  ? 'bg-black text-white group-hover:bg-white group-hover:text-black'
-                  : 'bg-zinc-100 text-zinc-600 group-hover:bg-zinc-800 group-hover:text-white'
-              }`}
-            >
-              {totalCartCount}
-            </span>
-          </button>
-
-          {/* Mobile menu trigger */}
+        {/* Mobile menu trigger */}
+        <div className="md:hidden flex items-center">
           <button
             id="mobile-menu-toggle-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-black hover:bg-zinc-100 transition-colors"
+            className="p-2 text-black hover:bg-zinc-100 transition-colors"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -135,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cart, onOpenCart }) => {
             onClick={() => scrollTo('artist')}
             className="w-full text-left text-xs uppercase tracking-[0.2em] font-medium text-black py-2.5 flex items-center justify-between"
           >
-            <span>About Elias Thorne</span>
+            <span>About Ben Scott</span>
             <Info className="w-4 h-4 text-zinc-400" />
           </button>
         </div>

@@ -105,8 +105,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       <div className="text-[11px] text-zinc-600 mt-1">
                         Framing: <span className="font-medium text-black">{
                           item.frameOption === 'unframed' ? 'Unframed Archival Mat (£0)' :
-                          item.frameOption === 'black-gallery' ? 'Black Aluminum Gallery Frame (+£120)' :
-                          'English Natural Oak Frame (+£140)'
+                          item.frameOption === 'black-gallery' ? 'Black Aluminum Gallery Frame (+£1200)' :
+                          'English Natural Oak Frame (+£1400)'
                         }</span>
                       </div>
 

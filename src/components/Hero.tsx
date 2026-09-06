@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectArtwork, featuredArtwork }) 
                     {featuredArtwork.title} — {featuredArtwork.subtitle}
                   </div>
                   <div className="text-xs text-zinc-500 font-mono mt-0.5">
-                    {featuredArtwork.edition} • {featuredArtwork.pen} • {featuredArtwork.paper}
+                    {featuredArtwork.pen} • {featuredArtwork.paper}
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

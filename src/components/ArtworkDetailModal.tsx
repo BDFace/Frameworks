@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
-import { X, Check, ShieldCheck, Truck, Sparkles, ShoppingBag, ArrowRight, CornerUpLeft, ZoomIn } from 'lucide-react';
+import { X, Check, ShieldCheck, Truck, Mail, CornerUpLeft, ZoomIn } from 'lucide-react';
 import { Artwork, FrameOption } from '../types';
 
 interface ArtworkDetailModalProps {
   artwork: Artwork | null;
   onClose: () => void;
-  onAddToCart: (artwork: Artwork, frame: FrameOption, quantity: number) => void;
-  onDirectCheckout: (artwork: Artwork, frame: FrameOption, quantity: number) => void;
 }
 
 export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
   artwork,
-  onClose,
-  onAddToCart,
-  onDirectCheckout
+  onClose
 }) => {
   if (!artwork) return null;
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [selectedFrame, setSelectedFrame] = useState<FrameOption>('unframed');
   const [quantity, setQuantity] = useState(1);
-  const [addedToast, setAddedToast] = useState(false);
+  const [copiedToast, setCopiedToast] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
 
   const frameOptions: Array<{ id: FrameOption; name: string; price: number; description: string }> = [
@@ -33,13 +29,13 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
     {
       id: 'black-gallery',
       name: 'Black Aluminum Gallery Frame',
-      price: 120,
+      price: 1200,
       description: 'Ultra-slim matte black anodized aluminum frame with TruVue 99% UV-blocking museum acrylic.'
     },
     {
       id: 'natural-oak',
       name: 'Handcrafted English Natural Oak',
-      price: 140,
+      price: 1400,
       description: 'Solid FSC-certified English White Oak, hand-rubbed with natural wax finish and archival spacer.'
     }
   ];
@@ -57,14 +53,51 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
     ...artwork.additionalImages
   ];
 
-  const handleAdd = () => {
-    onAddToCart(artwork, selectedFrame, quantity);
-    setAddedToast(true);
-    setTimeout(() => setAddedToast(false), 2500);
+  const generateEmailContent = () => {
+    const frameName = currentFrameObj.name;
+    const framePrice = currentFrameObj.price > 0 ? `+£${currentFrameObj.price}` : 'Included (£0)';
+    const subject = `Commission Request: ${artwork.title} - £${totalPrice}`;
+    const body = `Hello Ben,
+
+I would like to submit a commission request for this piece:
+
+• Artwork: ${artwork.title} (${artwork.subtitle})
+• Base Artwork Price: £${artwork.price}
+• Framing: ${frameName} (${framePrice})
+• Quantity: ${quantity}
+• Total Commission Value: £${totalPrice} GBP
+
+Technical Specifications:
+• Dimensions: ${artwork.dimensions}
+• Medium / Pen: ${artwork.pen}
+• Paper: ${artwork.paper}
+• Algorithm: ${artwork.algorithm}
+• Year: ${artwork.year}
+
+Collector Details:
+• Name: 
+• Contact Email / Phone: 
+• Shipping Address / Country: 
+• Notes / Inscription Request: 
+
+Thank you!`;
+    return { subject, body };
   };
 
-  const handleBuyNow = () => {
-    onDirectCheckout(artwork, selectedFrame, quantity);
+  const handleSubmitCommission = () => {
+    const { subject, body } = generateEmailContent();
+    const mailtoUrl = `mailto:ben.berlin2@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+    setCopiedToast(true);
+    setTimeout(() => setCopiedToast(false), 5000);
+  };
+
+  const handleCopyDetails = () => {
+    const { subject, body } = generateEmailContent();
+    const fullText = `To: ben.berlin2@hotmail.com\nSubject: ${subject}\n\n${body}`;
+    navigator.clipboard.writeText(fullText);
+    setCopiedToast(true);
+    setTimeout(() => setCopiedToast(false), 4000);
   };
 
   return (
@@ -182,12 +215,9 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
                 {/* Title & Price Header */}
                 <div className="pb-6 border-b border-zinc-200">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="px-2 py-0.5 bg-zinc-100 text-zinc-800 text-[10px] font-mono uppercase tracking-widest border border-zinc-200">
-                      {artwork.edition}
-                    </span>
                     <span className="text-xs text-emerald-700 font-medium flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                      {artwork.inStock} Original Plots Remaining
+                      {artwork.inStock} Original Plots Available
                     </span>
                   </div>
 
@@ -268,13 +298,13 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
                   </dl>
                 </div>
 
-                {/* Quantity & Action Controls */}
+                {/* Quantity & Commission Action Controls */}
                 <div className="pt-6 space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="flex items-center border border-zinc-300 bg-white">
                       <button
                         onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="px-3 py-2 text-zinc-600 hover:text-black hover:bg-zinc-100 text-sm font-medium"
+                        className="px-3 py-2 text-zinc-600 hover:text-black hover:bg-zinc-100 text-sm font-medium cursor-pointer"
                         aria-label="Decrease quantity"
                       >
                         -
@@ -284,7 +314,7 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
                       </span>
                       <button
                         onClick={() => setQuantity(Math.min(artwork.inStock, quantity + 1))}
-                        className="px-3 py-2 text-zinc-600 hover:text-black hover:bg-zinc-100 text-sm font-medium"
+                        className="px-3 py-2 text-zinc-600 hover:text-black hover:bg-zinc-100 text-sm font-medium cursor-pointer"
                         aria-label="Increase quantity"
                       >
                         +
@@ -292,33 +322,45 @@ export const ArtworkDetailModal: React.FC<ArtworkDetailModalProps> = ({
                     </div>
 
                     <button
-                      id="btn-add-to-bag"
-                      onClick={handleAdd}
-                      className="flex-1 py-3 px-4 border border-black text-black text-xs uppercase tracking-[0.2em] font-medium hover:bg-zinc-100 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                      id="btn-submit-commission"
+                      onClick={handleSubmitCommission}
+                      className="flex-1 py-3.5 px-6 bg-black text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow"
                     >
-                      <ShoppingBag className="w-4 h-4" />
-                      <span>{addedToast ? 'Added to Bag!' : 'Add to Bag'}</span>
+                      <Mail className="w-4 h-4" />
+                      <span>Submit Commission</span>
                     </button>
                   </div>
 
-                  {/* Direct Instant Checkout Button */}
-                  <button
-                    id="btn-direct-checkout"
-                    onClick={handleBuyNow}
-                    className="w-full py-4 px-6 bg-black text-white text-xs uppercase tracking-[0.25em] font-medium hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
-                  >
-                    <span>Proceed to Payment (${totalPrice})</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                  {/* Direct Contact & Details Copy */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-zinc-500 font-mono pt-1 gap-2">
+                    <span className="flex items-center gap-1.5 text-zinc-600">
+                      <Mail className="w-3.5 h-3.5 text-zinc-400" />
+                      Direct email to ben.berlin2@hotmail.com
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleCopyDetails}
+                      className="text-zinc-600 hover:text-black underline cursor-pointer text-left sm:text-right"
+                    >
+                      {copiedToast ? 'Details Copied!' : 'Copy commission details'}
+                    </button>
+                  </div>
+
+                  {copiedToast && (
+                    <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                      <span>Email drafted to Ben Scott with full artwork & framing specifications.</span>
+                    </div>
+                  )}
 
                   {/* Local Artist Authenticity Guarantee */}
                   <div className="bg-[#F4F4F4] p-4 border border-zinc-200 text-xs text-zinc-600 space-y-2 mt-4">
                     <div className="flex items-center gap-2 font-medium text-black">
                       <ShieldCheck className="w-4 h-4 text-zinc-800" />
-                      <span>Direct from Elias Thorne Studio (London, UK)</span>
+                      <span>Direct from Ben Scott Studio (London, UK)</span>
                     </div>
                     <p className="font-light text-[11px] leading-relaxed">
-                      Every print includes a hand-signed Certificate of Authenticity with the exact G-code algorithm seed hash, edition numbering in 2B graphite, and blind embossed studio seal.
+                      Every print includes a hand-signed Certificate of Authenticity with the exact G-code algorithm seed hash, hand-numbered in 2B graphite, and blind embossed studio seal.
                     </p>
                     <div className="flex items-center gap-2 text-[11px] text-zinc-500 pt-1 border-t border-zinc-200">
                       <Truck className="w-3.5 h-3.5" />

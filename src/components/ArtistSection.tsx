@@ -53,7 +53,7 @@ export const ArtistSection: React.FC = () => {
             </blockquote>
 
             <p className="text-zinc-600 text-sm font-light leading-relaxed">
-              Every drawing is executed in his London studio on calibrated AxiDraw plotters using technical pens from Rotring and Staedtler. Rather than mass-producing commercial prints, Elias limits each algorithm edition to 50 unique physical runs, celebrating the subtle micro-variations that occur as ink absorbs into paper fiber.
+              Every drawing is executed in his London studio on calibrated AxiDraw plotters using technical pens from Rotring and Staedtler. Rather than mass-producing commercial prints, Ben limits each algorithm series to small physical runs, celebrating the subtle micro-variations that occur as ink absorbs into paper fiber.
             </p>
 
             {/* Studio Contact / Quick Details */}
@@ -61,7 +61,7 @@ export const ArtistSection: React.FC = () => {
               <div>
                 <div className="font-mono text-zinc-400 uppercase tracking-wider mb-1">Direct Inquiries</div>
                 <a
-                  href="mailto:elias@thorne-data-art.studio"
+                  href="mailto:ben.berlin2@hotmail.com"
                   className="text-black font-medium hover:underline flex items-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5 text-zinc-600" />
@@ -71,7 +71,7 @@ export const ArtistSection: React.FC = () => {
 
               <div>
                 <div className="font-mono text-zinc-400 uppercase tracking-wider mb-1">Studio Visits</div>
-                <span className="text-zinc-700">Open by private appointment for collectors in Hackney, London.</span>
+                <span className="text-zinc-700">Open by private appointment for collectors in London.</span>
               </div>
             </div>
           </div>

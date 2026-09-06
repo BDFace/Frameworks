@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { Eye, ShoppingBag, ArrowUpRight, Check, SlidersHorizontal } from 'lucide-react';
+import { Eye, ArrowUpRight, SlidersHorizontal } from 'lucide-react';
 import { Artwork } from '../types';
 
 interface GalleryProps {
   artworks: Artwork[];
   onSelectArtwork: (artwork: Artwork) => void;
-  onAddToCart: (artwork: Artwork) => void;
 }
 
-export const Gallery: React.FC<GalleryProps> = ({ artworks, onSelectArtwork, onAddToCart }) => {
+export const Gallery: React.FC<GalleryProps> = ({ artworks, onSelectArtwork }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [addedId, setAddedId] = useState<string | null>(null);
 
   const categories = [
     { id: 'all', label: 'All Works' },
@@ -23,13 +21,6 @@ export const Gallery: React.FC<GalleryProps> = ({ artworks, onSelectArtwork, onA
   const filteredArtworks = selectedCategory === 'all'
     ? artworks
     : artworks.filter(art => art.category === selectedCategory);
-
-  const handleQuickAdd = (e: React.MouseEvent, art: Artwork) => {
-    e.stopPropagation();
-    onAddToCart(art);
-    setAddedId(art.id);
-    setTimeout(() => setAddedId(null), 2000);
-  };
 
   return (
     <section id="gallery" className="py-24 sm:py-32 bg-white border-t border-zinc-200">
@@ -104,11 +95,6 @@ export const Gallery: React.FC<GalleryProps> = ({ artworks, onSelectArtwork, onA
                       <span>Inspect Details</span>
                     </div>
                   </div>
-
-                  {/* Edition Tag */}
-                  <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-1 text-[10px] font-mono text-zinc-800 border border-zinc-200">
-                    {art.edition}
-                  </div>
                 </div>
               </div>
 
@@ -147,32 +133,15 @@ export const Gallery: React.FC<GalleryProps> = ({ artworks, onSelectArtwork, onA
                   </div>
                 </div>
 
-                {/* Card Action Buttons */}
-                <div className="flex items-center gap-2 pt-2">
+                {/* Card Action Button */}
+                <div className="pt-2">
                   <button
                     id={`btn-view-${art.id}`}
                     onClick={() => onSelectArtwork(art)}
-                    className="flex-1 py-2.5 px-3 border border-black text-black text-xs uppercase tracking-[0.15em] font-medium hover:bg-black hover:text-white transition-all cursor-pointer flex items-center justify-center gap-1"
+                    className="w-full py-2.5 px-4 border border-black text-black text-xs uppercase tracking-[0.15em] font-medium hover:bg-black hover:text-white transition-all cursor-pointer flex items-center justify-center gap-1.5"
                   >
                     <span>View & Buy</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
-
-                  <button
-                    id={`btn-quick-add-${art.id}`}
-                    onClick={(e) => handleQuickAdd(e, art)}
-                    className={`py-2.5 px-3 border text-xs uppercase tracking-[0.15em] font-medium transition-all cursor-pointer flex items-center justify-center ${
-                      addedId === art.id
-                        ? 'bg-emerald-600 text-white border-emerald-600'
-                        : 'border-zinc-300 text-zinc-700 hover:border-black hover:text-black hover:bg-zinc-50'
-                    }`}
-                    title="Quick Add to Bag"
-                  >
-                    {addedId === art.id ? (
-                      <Check className="w-4 h-4 text-white" />
-                    ) : (
-                      <ShoppingBag className="w-4 h-4" />
-                    )}
                   </button>
                 </div>
               </div>
@@ -189,7 +158,7 @@ export const Gallery: React.FC<GalleryProps> = ({ artworks, onSelectArtwork, onA
             </p>
           </div>
           <a
-            href="mailto:studio@eliasthorne-plotter.art?subject=Custom%20Pen%20Plotter%20Commission%20Inquiry"
+            href="mailto:ben.berlin2@hotmail.com?subject=Custom%20Pen%20Plotter%20Commission%20Inquiry"
             className="px-6 py-3 bg-black text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-zinc-800 transition-colors whitespace-nowrap"
           >
             Inquire Commission
