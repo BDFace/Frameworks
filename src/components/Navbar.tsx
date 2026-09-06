@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
         </div>
 
         {/* Desktop Navigation Links - positioned over to the right */}
-        <nav id="desktop-nav" className="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium text-[#4A4A4A] ml-auto">
+        <nav id="desktop-nav" className="hidden md:flex items-center space-x-8 text-sm tracking-[0.2em] uppercase font-medium text-[#4A4A4A] ml-auto">
           <button
             id="nav-link-gallery"
             onClick={() => scrollTo('gallery')}
@@ -94,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             onClick={() => scrollTo('gallery')}
             className="w-full text-left text-xs uppercase tracking-[0.2em] font-medium text-black py-2.5 flex items-center justify-between border-b border-zinc-100"
           >
-            <span>Gallery Collection</span>
+            <span>Gallery</span>
             <Layers className="w-4 h-4 text-zinc-400" />
           </button>
           <button
@@ -102,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             onClick={() => scrollTo('process')}
             className="w-full text-left text-xs uppercase tracking-[0.2em] font-medium text-black py-2.5 flex items-center justify-between border-b border-zinc-100"
           >
-            <span>Process & Machine</span>
+            <span>Process</span>
             <Compass className="w-4 h-4 text-zinc-400" />
           </button>
           <button
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             onClick={() => scrollTo('artist')}
             className="w-full text-left text-xs uppercase tracking-[0.2em] font-medium text-black py-2.5 flex items-center justify-between"
           >
-            <span>About Ben Scott</span>
+            <span>Artist</span>
             <Info className="w-4 h-4 text-zinc-400" />
           </button>
         </div>

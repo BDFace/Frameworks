@@ -97,18 +97,6 @@ export const Footer: React.FC = () => {
                   <span className="leading-snug">{feedback.message}</span>
                 </div>
               )}
-
-              <div className="mt-2.5 flex items-center justify-between text-[11px] font-mono text-zinc-500">
-                <span>Subscribers append directly to subscribers.csv</span>
-                <button
-                  type="button"
-                  onClick={() => setIsGitHubModalOpen(true)}
-                  className="inline-flex items-center gap-1 text-zinc-400 hover:text-white underline cursor-pointer"
-                >
-                  <Github className="w-3 h-3" />
-                  <span>GitHub Sync Settings</span>
-                </button>
-              </div>
             </form>
           </div>
 
