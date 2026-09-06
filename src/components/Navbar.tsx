@@ -47,7 +47,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cart, onOpenCart }) => {
               FRAMEWORKS
             </span>
             <span className="text-[10px] tracking-[0.25em] text-[#717171] uppercase font-sans mt-1 block">
-              Elias Thorne • Data & Ink Studio
+              Ben Scott • Data & Ink Studio
             </span>
           </a>
         </div>

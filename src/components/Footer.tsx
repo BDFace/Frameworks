@@ -77,11 +77,10 @@ export const Footer: React.FC = () => {
             <div>
               <div className="font-mono text-zinc-400 uppercase tracking-wider mb-3">Studio Location</div>
               <div className="text-zinc-300 space-y-1">
-                <p className="font-medium text-white">Elias Thorne Studio</p>
-                <p>Hackney</p>
-                <p>London, E8 2NG</p>
+                <p className="font-medium text-white">Ben Scott Studio</p>
+                <p>London</p>
                 <p className="text-zinc-400 font-mono text-[11px]">United Kingdom</p>
-                <p className="pt-2 text-zinc-400 font-mono">visits@thorne.art</p>
+                <p className="pt-2 text-zinc-400 font-mono">ben.berlin2@hotmail.com</p>
               </div>
             </div>
           </div>
@@ -91,7 +90,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
           <div>
-            © {new Date().getFullYear()} FRAMEWORKS STUDIO • ELIAS THORNE. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} FRAMEWORKS STUDIO • BEN SCOTT. ALL RIGHTS RESERVED.
           </div>
 
           <button

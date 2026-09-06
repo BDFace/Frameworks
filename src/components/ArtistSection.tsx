@@ -19,14 +19,14 @@ export const ArtistSection: React.FC = () => {
               <div className="relative aspect-[3/4] bg-white shadow-md border border-zinc-200 overflow-hidden">
                 <img
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuASG50_yy4YLZr23CflMYKpyYCtegTdDH8Pcy3zQcUZoCcqJgwHsIfJLYsf55qTfJH2nv4XTyWh_CiR3d1DOPKZgm_lbMuTRnADrvzah7cOR0jgooT8uNbjn3VM4b3pUuFUI77gzK6iMclnpbNPWXvKTDopugszplKe04mF6X8jertUXnx-DjcpMqoUThkiWVddvlmk-GWJui0bSX4MQUteXLWDwkZxYcQMMAgfxPC1sbMlkENaM7gS"
-                  alt="Elias Thorne in London print studio"
+                  alt="Ben Scott in London print studio"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
               </div>
 
               <div className="mt-4 pt-3 border-t border-zinc-200 flex items-center justify-between text-xs font-mono text-zinc-500">
-                <span>Elias Thorne</span>
+                <span>Ben Scott</span>
                 <span>Studio Master // 2024</span>
               </div>
             </div>
@@ -40,12 +40,12 @@ export const ArtistSection: React.FC = () => {
                 London, UK Studio
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl text-black font-normal tracking-tight">
-                About Elias Thorne
+                About Ben Scott
               </h2>
             </div>
 
             <p className="text-zinc-700 text-base font-light leading-relaxed font-sans">
-              Elias Thorne is an algorithmic artist, software engineer, and physical printmaker based in London, United Kingdom. His work investigates the boundary between deterministic code and organic physical media.
+              Ben Scott is an algorithmic artist, software engineer, and physical printmaker based in London, United Kingdom. His work investigates the boundary between deterministic code and organic physical media.
             </p>
 
             <blockquote className="border-l-2 border-black pl-5 italic font-serif text-lg sm:text-xl text-black font-normal leading-relaxed my-4">
@@ -65,7 +65,7 @@ export const ArtistSection: React.FC = () => {
                   className="text-black font-medium hover:underline flex items-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5 text-zinc-600" />
-                  <span>elias@thorne-data-art.studio</span>
+                  <span>ben.berlin2@hotmail.com</span>
                 </a>
               </div>
 
