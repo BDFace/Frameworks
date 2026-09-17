@@ -93,7 +93,7 @@ export const ARTWORKS: Artwork[] = [
     plotTime: '04h 23m',
     plotSpeed: '25mm/sec vector traversal',
     year: 2024,
-    description: 'A mathematical study of broken radial symmetry. Dense geometric arcs intertwine to form an optical effect that shifts dynamically with the viewer/'s angle of observation.',
+    description: 'A mathematical study of broken radial symmetry. Dense geometric arcs intertwine to form an optical effect that shifts dynamically.',
     story: 'Circles on Blue is generated through simple Javascript code. The continuous rotational vectors weave a hypnotic architectural geometry that anchors the piece with meditative clarity.',
     image: '/Circles on Blue.png',
     category: 'moire',
