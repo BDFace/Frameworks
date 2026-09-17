@@ -2,9 +2,9 @@ import { Artwork } from '../types';
 
 export const ARTWORKS: Artwork[] = [
   {
-    id: 'plot-001',
-    slug: 'plot-001',
-    title: 'Lattice in Blue',
+    id: 'Lattice on Blue',
+    slug: 'Lattice on Blue',
+    title: 'Lattice on Blue',
     subtitle: 'Generative Geometry & Harmonic Tessellation',
     price: 4500,
     edition: 'Edition 04 / 50',
@@ -40,8 +40,8 @@ export const ARTWORKS: Artwork[] = [
     inStock: 4
   },
   {
-    id: 'algorithm-alpha',
-    slug: 'algorithm-alpha',
+    id: 'A Dog',
+    slug: 'A Dog',
     title: 'A Dog',
     subtitle: 'Topographical Simplex Contour Drift',
     price: 5200,
@@ -80,8 +80,8 @@ export const ARTWORKS: Artwork[] = [
     inStock: 3
   },
   {
-    id: 'structure-beta',
-    slug: 'structure-beta',
+    id: 'Circles on Blue',
+    slug: 'Circles on Blue',
     title: 'Circles on Blue',
     subtitle: 'Quad-Axis Symmetrical Lattice',
     price: 4800,
@@ -118,8 +118,8 @@ export const ARTWORKS: Artwork[] = [
     inStock: 5
   },
   {
-    id: 'algorithm-beta',
-    slug: 'algorithm-beta',
+    id: 'Generative Decay (45)',
+    slug: 'Generative Decay (45)',
     title: 'Generative Decay (45)',
     subtitle: 'Radial Hyperbolic Harmonics',
     price: 4500,
@@ -133,7 +133,7 @@ export const ARTWORKS: Artwork[] = [
     year: 2024,
     description: 'Concentric spirographic waves radiating outwards with progressive micro-phase shifts. The resulting interference patterns create a hypnotic depth of field reminiscent of acoustic oscillations.',
     story: 'Conceived as an inquiry into wave propagation in two-dimensional space. The plotter records the micro-vibrations of the stepper motors directly onto soft textured cotton paper.',
-    image: '/generative-decay(45).png',
+    image: '/generative-decay-45.png',
     category: 'moire',
     additionalImages: [
       {
