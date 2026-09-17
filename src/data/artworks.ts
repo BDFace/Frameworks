@@ -153,7 +153,7 @@ export const ARTWORKS: Artwork[] = [
   {
     id: 'structure-04',
     slug: 'structure-04',
-    title: 'Structure 04',
+    title: 'Fading to Blue',
     subtitle: 'Isometric Vector Projections & Wireframe',
     price: 5000,
     edition: 'Edition 06 / 50',
@@ -164,9 +164,9 @@ export const ARTWORKS: Artwork[] = [
     plotTime: '06h 02m',
     plotSpeed: '16mm/sec vector traversal',
     year: 2024,
-    description: 'An architectural fantasy translating 3D topological matrices into axonometric isometric line weight variations. Plotted with archival carbon ink on heavy vellum for extreme line sharpness.',
-    story: 'Structure 04 pays homage to classical architectural blueprints and cybernetic cartography. Each vector path was plotted with varying downward pen pressure to yield micro-tonal variations.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDI6eFQ13_eT3QyA0qbCVSoOmLVkZJBJ7n5J8w4zsVebwGCg-Tt-fEY5-JXnXnzFsaUIGUapg3AqGnBys6LDIFqXrJ98tAQXF8cDLJBvVCl9yn0Lo037zUX_7KsUDOzXwprOozcB2oyYIdwh-h75XZPxNG6vU0LWZgzL85Oa9xRpGpHBogvUxFSp5RgYJxWSftEdhtfsqPCFDLAp0tY9zsJoi6BnD9Q4fb2aiwtqdwCAgQ7lGZM6WIj',
+    description: 'An classical fade to chaos. Plotted with archival carbon ink on heavy vellum for extreme line sharpness.',
+    story: 'Fading to Blue pays homage to classical architectural blueprints and cybernetic cartography. Each vector path was plotted with varying downward pen pressure to yield micro-tonal variations.',
+    image: '/Fading to Blue.png',
     category: 'isometric',
     additionalImages: [
       {
