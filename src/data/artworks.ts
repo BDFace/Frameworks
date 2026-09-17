@@ -184,9 +184,9 @@ export const ARTWORKS: Artwork[] = [
     inStock: 3
   },
   {
-    id: 'waveform-12',
-    slug: 'waveform-12',
-    title: 'Waveform 12',
+    id: 'Forms',
+    slug: 'Forms',
+    title: 'Forms',
     subtitle: 'Continuous Harmonic Sine Ribbon',
     price: 4000,
     edition: 'Edition 15 / 50',
@@ -197,9 +197,9 @@ export const ARTWORKS: Artwork[] = [
     plotTime: '02h 45m',
     plotSpeed: '30mm/sec vector traversal',
     year: 2024,
-    description: 'A horizontal ribbons field oscillating across the wide expanse of handmade Japanese washi paper. The subtle fibrous tooth of the paper yields delicate ink bleed that softens mathematical rigor.',
-    story: 'Inspired by seismic spectrograms and ocean swell resonance. The single continuous toolpath glides across the paper without lifting the pen for over 180 meters of plotted ink.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhWmU_0vA1xN9GNlDNL4soYEPTnHxWywZ81y5v4QoZU0F8p76eKrFwitDztYakxdVGJXi8ftGzzLGCMD1X6wIW8DkmdRh1zPsVr7qdI7QEQuVMu6UKoRWMdBSzVXaKZjBgMgM7-NYhWfgR9TaYlmDzcGh3etEOhbaTMqW9uqXha9Ll5WiUAfPRWU-v91I-DxFpakOtYJmW8un0Fc8rHaN8pD0yvmSHq_05TzEN4FLZ70IOrBxy75Hg',
+    description: 'A mathematical study of broken radial symmetry.',
+    story: 'This piece represents a lifecycle, with the year of birth expanding year by year to highlight the year of birth of my two children.',
+    image: '/Golen Circles.png',
     category: 'topography',
     additionalImages: [
       {
