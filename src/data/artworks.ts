@@ -4,7 +4,7 @@ export const ARTWORKS: Artwork[] = [
   {
     id: 'plot-001',
     slug: 'plot-001',
-    title: 'Plot #001',
+    title: 'Lattice in Blue',
     subtitle: 'Generative Geometry & Harmonic Tessellation',
     price: 4500,
     edition: 'Edition 04 / 50',
@@ -17,7 +17,7 @@ export const ARTWORKS: Artwork[] = [
     year: 2024,
     description: 'A strict exploration of intersecting geometric planes, generating emergent moiré patterns through dense line plotting. Calculated using custom procedural algorithms to ensure perfect symmetry while retaining the subtle imperfections of the physical pen stroke.',
     story: 'Plot #001 was plotted using an AxiDraw V3 machine equipped with a Staedtler pigment liner. The algorithm iteratively subdivides hexagonal boundary layers, generating 14,800 individual path vectors that intersect to produce structural depth without gradient shading.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBLKbT2_si0GciByu1hiXEZpy4S_IDoDSDdMX3Q2YzNtsqG_ztoNGhx0olG46lrEUBwdvH_p9D8OpHGFMvjOwdUPsfXJQmJelUlOQFhngfjpNzB6jFv_n9C3yOcwDoqFh3dpfjs3nPlaGGAM8VnZWUDW4BS3bueJdgQhIjwpP5wgsQ4zXZTwPReXh23CTFIREEe6exXOqQalrSsfurET7u_BCKDxsKl1duZq9kG-4LJPh5lm-BY1USC',
+    image: '/Lattice in Blue.png',
     category: 'geometric',
     additionalImages: [
       {
