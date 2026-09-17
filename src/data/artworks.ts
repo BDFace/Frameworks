@@ -42,7 +42,7 @@ export const ARTWORKS: Artwork[] = [
   {
     id: 'algorithm-alpha',
     slug: 'algorithm-alpha',
-    title: 'Algorithm Alpha',
+    title: 'A Dog',
     subtitle: 'Topographical Simplex Contour Drift',
     price: 5200,
     edition: 'Edition 12 / 50',
@@ -82,7 +82,7 @@ export const ARTWORKS: Artwork[] = [
   {
     id: 'structure-beta',
     slug: 'structure-beta',
-    title: 'Structure Beta',
+    title: 'Circles on Blue',
     subtitle: 'Quad-Axis Symmetrical Lattice',
     price: 4800,
     edition: 'Edition 08 / 50',
