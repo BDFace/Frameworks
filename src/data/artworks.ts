@@ -93,15 +93,15 @@ export const ARTWORKS: Artwork[] = [
     plotTime: '04h 23m',
     plotSpeed: '25mm/sec vector traversal',
     year: 2024,
-    description: 'A mathematical study of 4-fold radial symmetry and optical interference. Dense geometric arcs intertwine to form an optical moiré effect that shifts dynamically with the viewer\'s angle of observation.',
-    story: 'Structure Beta is generated through sinusoidal matrix transformations. The continuous rotational vectors weave a hypnotic architectural geometry that anchors the room with meditative clarity.',
+    description: 'A mathematical study of broken radial symmetry. Dense geometric arcs intertwine to form an optical effect that shifts dynamically with the viewer/'s angle of observation.',
+    story: 'Circles on Blue is generated through simple Javascript code. The continuous rotational vectors weave a hypnotic architectural geometry that anchors the piece with meditative clarity.',
     image: '/Circles on Blue.png',
     category: 'moire',
     additionalImages: [
       {
-        url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzaYk5Yl1sLJyQ6RdJC-1jxmKELnzVElR-ESHIxag_C-Z1a5dqVyVXD7Fs3MpYx0bpPGUUAG8ionKp3m5ovfxIRsOUezrpFttdhfSa2iYkROOgd-IPDCJ4FLNEwcCZRycn57UTZ7Mx5MhuuY5Njjla7FozABeNiONXTKSZTrqhALf_qphCZjjothK_NEOba_tGVPH40h9AamaA5dWpbtj_9Okzt7HGPQg5ZKSm2tdPQzSg-25yEPgH',
+        url: '/Circles on Blue.png',
         caption: 'Gallery installation in contemporary minimal interior',
-        alt: 'Structure Beta framed wall exhibition'
+        alt: 'Circles on Blue framed wall exhibition'
       },
       {
         url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUwYDrCK2NGVds4cQx2-9MZe7eT8MftKJtHSZSUqexYaDwKRQx6FYjOwpoHKOhOvVnkfEtpi0eutSupJk_9QSdmZ8N8zWZ9EUxj4ULSie5rX8lPShuDhgPK49npxCmw6QlahTKuYezqWWx8FWRnKBbQn2dNhu_OK4znfEkttRcR2TdZG_HigC61qq7yoikGxj1Jc9v0HG_oSc64ApSg8-urNbqCyTq5f-uStcBFIVosnR8KeZ0CZPA',
