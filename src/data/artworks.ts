@@ -151,8 +151,8 @@ export const ARTWORKS: Artwork[] = [
     inStock: 2
   },
   {
-    id: 'structure-04',
-    slug: 'structure-04',
+    id: 'Fading to Blue',
+    slug: 'Fading to Blue',
     title: 'Fading to Blue',
     subtitle: 'Isometric Vector Projections & Wireframe',
     price: 5000,
