@@ -95,7 +95,7 @@ export const ARTWORKS: Artwork[] = [
     year: 2024,
     description: 'A mathematical study of 4-fold radial symmetry and optical interference. Dense geometric arcs intertwine to form an optical moiré effect that shifts dynamically with the viewer\'s angle of observation.',
     story: 'Structure Beta is generated through sinusoidal matrix transformations. The continuous rotational vectors weave a hypnotic architectural geometry that anchors the room with meditative clarity.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzaYk5Yl1sLJyQ6RdJC-1jxmKELnzVElR-ESHIxag_C-Z1a5dqVyVXD7Fs3MpYx0bpPGUUAG8ionKp3m5ovfxIRsOUezrpFttdhfSa2iYkROOgd-IPDCJ4FLNEwcCZRycn57UTZ7Mx5MhuuY5Njjla7FozABeNiONXTKSZTrqhALf_qphCZjjothK_NEOba_tGVPH40h9AamaA5dWpbtj_9Okzt7HGPQg5ZKSm2tdPQzSg-25yEPgH',
+    image: '/Circles on Blue.png',
     category: 'moire',
     additionalImages: [
       {
