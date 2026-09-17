@@ -120,7 +120,7 @@ export const ARTWORKS: Artwork[] = [
   {
     id: 'algorithm-beta',
     slug: 'algorithm-beta',
-    title: 'Algorithm Beta',
+    title: 'Generative Decay (45)',
     subtitle: 'Radial Hyperbolic Harmonics',
     price: 4500,
     edition: 'Edition 19 / 50',
@@ -133,7 +133,7 @@ export const ARTWORKS: Artwork[] = [
     year: 2024,
     description: 'Concentric spirographic waves radiating outwards with progressive micro-phase shifts. The resulting interference patterns create a hypnotic depth of field reminiscent of acoustic oscillations.',
     story: 'Conceived as an inquiry into wave propagation in two-dimensional space. The plotter records the micro-vibrations of the stepper motors directly onto soft textured cotton paper.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBoS0J8meWbdn-uNZJJCQDTIROyrT9-57SX53EUV_ofKJL5XmFAeF2HVl3Mf73UOmyqcC_ysPxFIDwVxdzrI2bACkLCRZ-etqC0ShNja2XFufJrHFp9Nq1tHy5e2QuI8DrXGn47zdqzK6H1rCDzn7L6pASloZfPQBCtIZ3QuFF14RhEeji1RNzEAZ2mZXjnKOG6GOFSjio-RJj1UmWa7uOVgHmoyYOSBxJSQFXndrtQUNbpRmGdfi3A',
+    image: '/generative decay (45).png',
     category: 'moire',
     additionalImages: [
       {
