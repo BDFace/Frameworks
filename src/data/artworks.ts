@@ -199,7 +199,7 @@ export const ARTWORKS: Artwork[] = [
     year: 2024,
     description: 'A mathematical study of broken radial symmetry.',
     story: 'This piece represents a lifecycle, with the year of birth expanding year by year to highlight the year of birth of my two children.',
-    image: '/Golen Circles.png',
+    image: '/Golden Circles.png',
     category: 'topography',
     additionalImages: [
       {
