@@ -133,7 +133,7 @@ export const ARTWORKS: Artwork[] = [
     year: 2024,
     description: 'Concentric spirographic waves radiating outwards with progressive micro-phase shifts. The resulting interference patterns create a hypnotic depth of field reminiscent of acoustic oscillations.',
     story: 'Conceived as an inquiry into wave propagation in two-dimensional space. The plotter records the micro-vibrations of the stepper motors directly onto soft textured cotton paper.',
-    image: '/generative decay (45).png',
+    image: '/generative-decay(45).png',
     category: 'moire',
     additionalImages: [
       {
